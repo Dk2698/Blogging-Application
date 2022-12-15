@@ -47,4 +47,5 @@ public class Post {
     // add post to field require category and user
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private Set<Comment> comments = new HashSet<Comment>();
+
 }

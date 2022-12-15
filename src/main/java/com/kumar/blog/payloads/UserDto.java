@@ -13,6 +13,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 // data expose directly  -> response body
 // validating data using bean validator with custom messages
 // java beans is validated with JSR 380 know as BEan validation 2.0
@@ -37,4 +40,6 @@ public class UserDto {
 
     @NotEmpty
     private String about;
+
+    private Set<RoleDto> roles = new HashSet<RoleDto>();
 }
