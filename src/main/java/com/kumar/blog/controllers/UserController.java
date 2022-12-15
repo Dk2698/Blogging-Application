@@ -46,7 +46,7 @@ public class UserController {
 		UserDto updatedUserDto = this.userService.updateUser(userDto, uid);
 		return  ResponseEntity.ok(updatedUserDto);
 	}
-	// Delete - delete user
+	// Delete - delete user to access only admin
 	@DeleteMapping("/{userId}")
 	public ResponseEntity<ApiResponse> deleteUser(@PathVariable Integer userId){
 //		this.deleteUser(userId);
