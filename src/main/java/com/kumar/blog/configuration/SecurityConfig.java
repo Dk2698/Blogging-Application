@@ -20,9 +20,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.DefaultSecurityFilterChain;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
 @EnableWebSecurity
+@EnableWebMvc
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
@@ -35,8 +37,10 @@ public class SecurityConfig {
     @Autowired
     private JwtAuthenticationFilter jwtAuthenticationFilter;
 
-    public  static  final  String[] PUBLIC_URLS = {"/api/v1/auth/login","/v1/api/register","/api/posts"};
-
+    public  static  final  String[] PUBLIC_URLS = {"/api/v1/auth/login","/v1/api/register","/api/posts",
+            "/v3/api-docs", "/v2/api-docs",
+            "/swagger-resources/**", "/swagger-ui/**", "/webjars/**"
+    };
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf()

@@ -45,4 +45,5 @@ public class BlogAppApisApplication  implements CommandLineRunner {
 
 		}
 	}
+
 }
